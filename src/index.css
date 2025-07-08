@@ -1,0 +1,403 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom breakpoint for extra small screens */
+@screen xs {
+  .xs\:inline {
+    display: inline;
+  }
+  
+  .xs\:hidden {
+    display: none;
+  }
+}
+
+/* Floating Animation Keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* New Animation Keyframes */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(251, 146, 60, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(251, 146, 60, 0.8), 0 0 30px rgba(251, 146, 60, 0.6);
+  }
+}
+
+/* Custom Animation Classes */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-subtle {
+  animation: float-subtle 2.5s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Staggered Animation Delays */
+.animate-float-delay-1 {
+  animation-delay: 0.5s;
+}
+
+.animate-float-delay-2 {
+  animation-delay: 1s;
+}
+
+.animate-float-delay-3 {
+  animation-delay: 1.5s;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+.animation-delay-900 {
+  animation-delay: 900ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animation-delay-1200 {
+  animation-delay: 1200ms;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Sophisticated Grid Background */
+.sophisticated-grid {
+  position: relative;
+}
+
+.sophisticated-grid::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(0,0,0,0.02) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 40px 40px, 40px 40px, 60px 60px, 60px 60px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  z-index: -10;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.dark .sophisticated-grid::before {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  opacity: 0.4;
+}
+
+/* Deep Orange Blur for Cards */
+.card-with-blur {
+  position: relative;
+  isolation: isolate;
+}
+
+.card-with-blur::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle at center, #FF4500 0%, rgba(255,69,0,0.6) 30%, rgba(255,69,0,0.3) 50%, transparent 70%);
+  border-radius: inherit;
+  filter: blur(25px);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.card-with-blur:hover::before {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+/* Variant blur effects for different card types */
+.card-with-blur-subtle::before {
+  background: radial-gradient(circle at center, #FF4500 0%, rgba(255,69,0,0.4) 40%, rgba(255,69,0,0.2) 60%, transparent 80%);
+  filter: blur(20px);
+}
+
+.card-with-blur-subtle:hover::before {
+  opacity: 0.5;
+}
+
+.card-with-blur-intense::before {
+  background: radial-gradient(circle at center, #FF4500 0%, rgba(255,69,0,0.8) 25%, rgba(255,69,0,0.5) 45%, transparent 65%);
+  filter: blur(30px);
+}
+
+.card-with-blur-intense:hover::before {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+
+/* Feature card specific blur */
+.feature-card-blur::before {
+  background: radial-gradient(circle at center, #FF5722 0%, rgba(255,87,34,0.5) 35%, rgba(255,87,34,0.25) 55%, transparent 75%);
+  filter: blur(22px);
+}
+
+.feature-card-blur:hover::before {
+  opacity: 0.6;
+  transform: scale(1.03);
+}
+
+/* Product card specific blur */
+.product-card-blur::before {
+  background: radial-gradient(circle at center, #FF6347 0%, rgba(255,99,71,0.6) 30%, rgba(255,99,71,0.3) 50%, transparent 70%);
+  filter: blur(28px);
+}
+
+.product-card-blur:hover::before {
+  opacity: 0.8;
+  transform: scale(1.08);
+}
+
+/* Contact card specific blur */
+.contact-card-blur::before {
+  background: radial-gradient(circle at center, #FF7F50 0%, rgba(255,127,80,0.5) 35%, rgba(255,127,80,0.25) 55%, transparent 75%);
+  filter: blur(24px);
+}
+
+.contact-card-blur:hover::before {
+  opacity: 0.6;
+  transform: scale(1.04);
+}
+
+/* Performance optimizations */
+.card-with-blur,
+.card-with-blur-subtle,
+.card-with-blur-intense,
+.feature-card-blur,
+.product-card-blur,
+.contact-card-blur {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .sophisticated-grid::before {
+    background-size: 30px 30px, 30px 30px, 45px 45px, 45px 45px;
+    opacity: 0.4;
+  }
+  
+  .dark .sophisticated-grid::before {
+    opacity: 0.3;
+  }
+  
+  .card-with-blur::before,
+  .card-with-blur-subtle::before,
+  .card-with-blur-intense::before,
+  .feature-card-blur::before,
+  .product-card-blur::before,
+  .contact-card-blur::before {
+    filter: blur(15px);
+    inset: -15px;
+  }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card-with-blur::before,
+  .card-with-blur-subtle::before,
+  .card-with-blur-intense::before,
+  .feature-card-blur::before,
+  .product-card-blur::before,
+  .contact-card-blur::before {
+    transition: opacity 0.3s ease;
+    transform: none !important;
+  }
+  
+  .card-with-blur:hover::before,
+  .card-with-blur-subtle:hover::before,
+  .card-with-blur-intense:hover::before,
+  .feature-card-blur:hover::before,
+  .product-card-blur:hover::before,
+  .contact-card-blur:hover::before {
+    transform: none !important;
+  }
+
+  .animate-fade-in-up,
+  .animate-slide-up,
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .animate-bounce-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
