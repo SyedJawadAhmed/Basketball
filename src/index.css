@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 /* Custom breakpoint for extra small screens */
 @screen xs {
   .xs\:inline {

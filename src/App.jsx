@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './contexts/CartContext';
-@import "tailwindcss";
+// import '../styles/tailwind.css'; // Ensure you have Tailwind CSS set up
+// import './styles/global.css'; // Custom global styles
+// import tailwindcss from '@tailwindcss/vite';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Features from './pages/Features';
